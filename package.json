@@ -1,0 +1,24 @@
+{
+  "name": "lwmqn-util",
+  "version": "0.0.1",
+  "description": "Utility for LWMQN MQTT-Shepherd Server and MQTT-Node Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simenkid/lwmqn-util.git"
+  },
+  "keywords": [
+    "lwmqn",
+    "lwm2m",
+    "mqtt"
+  ],
+  "author": "Simen Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simenkid/lwmqn-util/issues"
+  },
+  "homepage": "https://github.com/simenkid/lwmqn-util"
+}
