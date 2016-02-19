@@ -27,7 +27,7 @@ ut.oidKey = function (oid) {
     return oidItem ? oidItem.key : oid;     // if undefined, return itself
 };
 
-ut.oidNumber = function (oid) {
+ut.oidNum = function (oid) {
     var oidItem = lwm2mid.getOid(oid);
 
     oidItem = oidItem ? oidItem.value : parseInt(oid);   // if undefined, return parseInt(itself)
@@ -45,7 +45,7 @@ ut.ridKey = function (oid, rid) {
     return ridItem ? ridItem.key : rid;     // if undefined, return itself
 };
 
-ut.ridNumber = function (oid, rid) {
+ut.ridNum = function (oid, rid) {
     var ridItem = lwm2mid.getRid(oid, rid);
 
     if (typeof rid === 'undefined')
