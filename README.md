@@ -229,3 +229,51 @@ ut.ridNum(3303, 7654);                     // 7654  (no such rid)
 ```
 ********************************************
 <br />
+
+<a name="API_getRspCode"></a>
+### .getRspCode(code)
+> Returns an item of the Response code.
+
+**Arguments**
+
+* code (*String|Number*): `code` can be given with a string or a number.  
+
+**Returns:**  
+  
+* (_Object_ | _Undefined_) Returns an item of `{ key: 'Created', value: 201 }`, otherwise returns `undefined` if not found.
+
+**Example**
+
+```js
+var ut = require('lwmqn-util');
+
+ut.getRspCode('BadRequest');  // { key: 'BadRequest', value: 400 }
+ut.getRspCode(400);           // { key: 'BadRequest', value: 400 }
+ut.getRspCode(302);           // undefined 
+```
+********************************************
+<br />
+
+<a name="API_rspCodeKey"></a>
+### .rspCodeKey(code)
+> Returns the string of an Response code.
+
+**Arguments**
+
+* code (*String|Number*): `code` can be given with a string or a number.  
+
+**Returns:**  
+  
+* (_String_ | _Undefined_) Returns the string of an Response code, otherwise returns `undefined` if not found.
+
+**Example**
+
+```js
+var ut = require('lwmqn-util');
+
+ut.rspCodeKey('BadRequest');  // 'BadRequest'
+ut.rspCodeKey(400);           // 'BadRequest'
+ut.rspCodeKey(302);           // undefined 
+```
+********************************************
+<br />
