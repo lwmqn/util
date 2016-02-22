@@ -135,12 +135,18 @@ ut.buildPathValuePairs = function (rootPath, obj) {
 
 ut.isGoodResponse = function (status) {
     var statusCode = ut.getRspCode(status),
-        goodCodes = [ 200, 201, 202, 204, 205 ];
+        goodCodes = [ 200, 201, 202, 204, 205 ],
+        included = false;
 
     if (typeof statusCode === 'undefined')
         return false;
 
-    return goodCodes.includes(statusCode.value);
+    goodCodes.forEach(function (v) {
+        if (v === statusCode.value)
+            included = true;
+    });
+
+    return included;
 };
 
 ut.getAccessCtrl = function (oid, rid) {
