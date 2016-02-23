@@ -1,6 +1,6 @@
 {
   "name": "lwmqn-util",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Utility for LWMQN MQTT-Shepherd Server and MQTT-Node Client",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/simenkid/lwmqn-util",
   "dependencies": {
-    "lwm2m-id": "^1.2.2"
+    "lwm2m-id": "^1.2.3"
   }
 }

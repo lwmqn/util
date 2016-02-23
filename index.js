@@ -1,6 +1,19 @@
 'use strict';
 
 var lwm2mid = require('lwm2m-id');
+
+lwm2mid.Cmd = new lwm2mid._Enum({
+    "read": 0,
+    "write": 1,
+    "discover": 2,
+    "writeAttrs": 3,
+    "execute": 4,
+    "observe": 5,
+    "notify": 6,
+    "ping": 7,
+    "unknown": 255
+});
+
 var ut = {
     getCmd: lwm2mid.getCmd,
     getOid: lwm2mid.getOid,
