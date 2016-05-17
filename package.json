@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/simenkid/lwmqn-util",
   "dependencies": {
-    "lwm2m-id": "^1.2.3"
+    "lwm2m-id": "^1.2.5"
   }
 }
