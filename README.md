@@ -464,10 +464,10 @@ ut.dotPath('/dev/0/sensor/value/');   // 'dev.0.sensor.value'
 **Example**
 
 ```js
-ut.dotPath('dev.0.sensor.value');     // [ 'dev', '0', 'sensor', 'value' ]
-ut.dotPath('.dev.0.sensor.value');    // [ 'dev', '0', 'sensor', 'value' ]
-ut.dotPath('/dev.0.sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
-ut.dotPath('/dev/0/sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
+ut.pathItems('dev.0.sensor.value');     // [ 'dev', '0', 'sensor', 'value' ]
+ut.pathItems('.dev.0.sensor.value');    // [ 'dev', '0', 'sensor', 'value' ]
+ut.pathItems('/dev.0.sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
+ut.pathItems('/dev/0/sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
 ```
 ********************************************
 <br />
@@ -491,8 +491,8 @@ ut.dotPath('/dev/0/sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
 var myObj = {
     a: {
         a1: {
-            a11: 1
-            a12: 'hi'
+            a11: 1,
+            a12: 'hi',
         },
         a2: 'foo'
     },

@@ -1,6 +1,6 @@
 {
   "name": "lwmqn-util",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Utility for LWMQN MQTT-Shepherd Server and MQTT-Node Client",
   "main": "index.js",
   "scripts": {

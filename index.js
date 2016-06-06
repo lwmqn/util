@@ -1,5 +1,4 @@
 'use strict';
-
 var lwm2mid = require('lwm2m-id');
 
 lwm2mid.Cmd = new lwm2mid._Enum({
@@ -15,16 +14,21 @@ lwm2mid.Cmd = new lwm2mid._Enum({
 });
 
 var ut = {
-    getCmd: lwm2mid.getCmd,
-    getOid: lwm2mid.getOid,
-    getRid: lwm2mid.getRid,
-    getRspCode: lwm2mid.getRspCode,
+    getCmd: null,           // define below
+    getOid: null,           // define below
+    getRid: null,           // define below
+    getRspCode: null,       // define below
     getSpecificResrcChar: lwm2mid.getRdef
 };
 
 /*************************************************************************************************/
 /*** Identifier Getters                                                                        ***/
 /*************************************************************************************************/
+ut.getCmd = function (id) {
+    var cmdItem = lwm2mid.getCmd(id);
+    return cmdItem ? { key: cmdItem.key, value: cmdItem.value } : undefined;
+};
+
 ut.cmdNum = function (id) {
     var cmdNum = ut.getCmd(id);
     return cmdNum ? cmdNum.value : undefined;
@@ -35,9 +39,14 @@ ut.cmdKey = function (id) {
     return cmdKey ? cmdKey.key : undefined;
 };
 
+ut.getOid = function (oid) {
+    var oidItem = lwm2mid.getOid(oid);
+    return oidItem ? { key: oidItem.key, value: oidItem.value } : undefined;
+};
+
 ut.oidKey = function (oid) {
     var oidItem = lwm2mid.getOid(oid);
-    return oidItem ? oidItem.key : oid;     // if undefined, return itself
+    return oidItem ? oidItem.key : oid.toString();     // if undefined, return itself
 };
 
 ut.oidNum = function (oid) {
@@ -47,15 +56,22 @@ ut.oidNum = function (oid) {
     return isNaN(oidItem) ? oid : oidItem;
 };
 
+ut.getRid = function (oid, rid) {
+    var ridItem = lwm2mid.getRid(oid, rid);
+    return ridItem ? { key: ridItem.key, value: ridItem.value } : undefined;
+};
+
 ut.ridKey = function (oid, rid) {
     var ridItem;
 
-    if (typeof rid === 'undefined')
-        ridItem = lwm2mid.getRid(oid);  // here, oid is rid
-    else
+    if (typeof rid === 'undefined') {
+        rid = oid;
+        ridItem = lwm2mid.getRid(rid);      // here, oid is rid
+    } else {
         ridItem = lwm2mid.getRid(oid, rid);
+    }
 
-    return ridItem ? ridItem.key : rid;     // if undefined, return itself
+    return ridItem ? ridItem.key : rid.toString();     // if undefined, return itself
 };
 
 ut.ridNum = function (oid, rid) {
@@ -66,6 +82,11 @@ ut.ridNum = function (oid, rid) {
 
     ridItem = ridItem ? ridItem.value : parseInt(rid);   // if undefined, return parseInt(itself)
     return isNaN(ridItem) ? rid : ridItem;
+};
+
+ut.getRspCode = function (code) {
+    var rspItem = lwm2mid.getRspCode(code);
+    return rspItem ? { key: rspItem.key, value: rspItem.value } : undefined;
 };
 
 ut.rspCodeKey = function (code) {
@@ -182,13 +203,14 @@ ut.getAccessCtrl = function (oid, rid) {
 ut.jsonify = function (str) {
     var obj;
 
+
     if (typeof str !== 'string')
         throw new TypeError('Input str should be a string.');
 
     try {
         obj = JSON.parse(str);
     } catch (e) {
-        return;
+        return str;
     }
     return obj;
 };  // undefined/result
