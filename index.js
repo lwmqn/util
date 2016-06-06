@@ -82,11 +82,17 @@ ut.rspCodeNum = function (code) {
 /*** Tackling Path                                                                             ***/
 /*************************************************************************************************/
 ut.createPath = function () {
+    if (arguments.length === 0)
+        throw new TypeError('Each argument should be a string or a number.');
+
     var args = Array.prototype.slice.call(arguments),
         connector = args[0],
         path = '';
 
     args.forEach(function (arg, i) {
+        if (!isValidArgType(arg))
+            throw new TypeError('Each argument should be a string or a number.');
+
         if (i !== 0)
             path = path + arg + connector;
     });
@@ -95,6 +101,9 @@ ut.createPath = function () {
 };
 
 ut.slashPath = function (path) {
+    if (typeof path !== 'string')
+        throw new TypeError('Input path should be a string.');
+
     path = path.replace(/\./g, '/');           // tranform dot notation into slash notation
 
     if (path[0] === '/')                       // if the first char of topic is '/', take it off
@@ -107,6 +116,9 @@ ut.slashPath = function (path) {
 };
 
 ut.dotPath = function (path) {
+    if (typeof path !== 'string')
+        throw new TypeError('Input path should be a string.');
+
     path = path.replace(/\//g, '.');           // tranform slash notation into dot notation
 
     if (path[0] === '.')                       // if the first char of topic is '.', take it off
@@ -169,6 +181,10 @@ ut.getAccessCtrl = function (oid, rid) {
 
 ut.jsonify = function (str) {
     var obj;
+
+    if (typeof str !== 'string')
+        throw new TypeError('Input str should be a string.');
+
     try {
         obj = JSON.parse(str);
     } catch (e) {
@@ -176,5 +192,17 @@ ut.jsonify = function (str) {
     }
     return obj;
 };  // undefined/result
+
+function isValidArgType(param) {
+    var isValid = true;
+
+    if (typeof param !== 'number' && typeof param !== 'string') {
+        isValid = false;
+    } else if (typeof param === 'number') {
+        isValid = !isNaN(param);
+    }
+
+    return isValid;
+}
 
 module.exports = ut;

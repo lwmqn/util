@@ -1,7 +1,12 @@
 # lwmqn-util
 Utility for LWMQN MQTT-Shepherd and MQTT-Node
 
+[![Travis branch](https://img.shields.io/travis/lwmqn/lwmqn-util/master.svg?maxAge=2592000)](https://travis-ci.org/lwmqn/lwmqn-util)
+[![npm](https://img.shields.io/npm/v/lwmqn-util.svg?maxAge=2592000)](https://www.npmjs.com/package/lwm2m-id)
+[![npm](https://img.shields.io/npm/l/lwmqn-util.svg?maxAge=2592000)](https://www.npmjs.com/package/lwm2m-id)
+
 <br />
+
 ## Table of Contents
 
 1. [Overiew](#Overiew)  
@@ -573,7 +578,7 @@ ut.getAccessCtrl('xxxx', 1234);                 // undfined
 
 **Returns:**  
   
-* (_Object_ | _String_) Returns an object if the string can be jasonified, otherwise returns the string itself.  
+* (_Object_ | _String_) Returns an object if the string can be jsonified, otherwise returns the string itself.  
 
 **Example**
 

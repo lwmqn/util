@@ -1,10 +1,10 @@
 {
   "name": "lwmqn-util",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Utility for LWMQN MQTT-Shepherd Server and MQTT-Node Client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test-all"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/simenkid/lwmqn-util",
   "dependencies": {
-    "lwm2m-id": "^1.2.5"
+    "lwm2m-id": "^1.2.8"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   }
 }
