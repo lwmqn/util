@@ -1,5 +1,5 @@
 # lwmqn-util
-Utility for LWMQN MQTT-Shepherd and MQTT-Node
+Utility for LWMQN mqtt-shepherd server and mqtt-node client libraries.
 
 [![Travis branch](https://img.shields.io/travis/lwmqn/lwmqn-util/master.svg?maxAge=2592000)](https://travis-ci.org/lwmqn/lwmqn-util)
 [![npm](https://img.shields.io/npm/v/lwmqn-util.svg?maxAge=2592000)](https://www.npmjs.com/package/lwm2m-id)
@@ -17,7 +17,7 @@ Utility for LWMQN MQTT-Shepherd and MQTT-Node
 <a name="Overiew"></a>  
 ## 1. Overview  
 
-**lwmqn-util** is a utility for Lightweight Mqtt Machine Network (LWMQN) Server and Client modules. This utility provides some common methods of getting identifiers in string or in number, getting command ids, getting response codes, and tackling the path of resource alloaction.  
+**lwmqn-util** is a utility for Lightweight Mqtt Machine Network Server([mqtt-shepherd](https://github.com/lwmqn/mqtt-shepherd)) and Client([mqtt-node](https://github.com/lwmqn/mqtt-node))  modules. This utility provides some common methods of getting identifiers in string or in number, getting command ids, getting response codes, and tackling the path of resource alloaction.  
   
 <a name="Installation"></a>
 ## 2. Installation
@@ -56,11 +56,11 @@ Utility for LWMQN MQTT-Shepherd and MQTT-Node
 
 **Arguments**
 
-* oid (*_String_ | _Number_*): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+1. oid (*_String_ | _Number_*): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
 
 **Returns:**  
   
-* (_Object_ | _Undefined_) Returns an item of `{ key: 'sampleId', value: 1234 }`, otherwise returns `undefined` if not found.
+* (_Object_ | _Undefined_): Returns an item of `{ key: 'sampleId', value: 1234 }`, otherwise returns `undefined` if not found.
 
 **Example**
 
@@ -75,20 +75,19 @@ ut.getOid('xxxx');         // undefined
 ut.getOid('9999');         // undefined 
 ut.getOid(9999);           // undefined 
 ```
+  
 ********************************************
-<br />
-
 <a name="API_oidKey"></a>
 ### .oidKey(oid)
 > Returns the string of an Object identifier.
 
 **Arguments**
 
-* oid (*_String_ | _Number_*): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+1. oid (*_String_ | _Number_*): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
 
 **Returns:**  
   
-* (_String_) Returns the id string, otherwise returns the argument `'oid'` ifself if not found.
+* (_String_): Returns the id string, otherwise returns the argument `'oid'` ifself if not found.
 
 **Example**
 
@@ -101,20 +100,19 @@ ut.oidKey('xxxx');         // 'xxxx' (returns the argument itself if id not foun
 ut.oidKey('9999');         // '9999'
 ut.oidKey(9999);           // 9999
 ```
+  
 ********************************************
-<br />
-
 <a name="API_oidNum"></a>
 ### .oidNum(oid)
 > Returns the number of an Object identifier.
 
 **Arguments**
 
-* oid (*_String_ | _Number_*): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+1. oid (*_String_ | _Number_*): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
 
 **Returns:**  
   
-* (_Number_) Returns the id number, otherwise returns the argument `'oid'` ifself if not found.
+* (_Number_): Returns the id number, otherwise returns the argument `'oid'` ifself if not found.
 
 **Example**
 
@@ -127,9 +125,8 @@ ut.oidKey('xxxx');         // 'xxxx' (returns the argument itself if id not foun
 ut.oidKey('9999');         // 9999
 ut.oidKey(9999);           // 9999
 ```
+  
 ********************************************
-<br />
-
 <a name="API_getRid"></a>
 ### .getRid([oid,] rid)
 > Returns an item of the Resource identifier.  
@@ -138,12 +135,12 @@ ut.oidKey(9999);           // 9999
 
 **Arguments**
 
-- oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
-- rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+1. oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+2. rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
 
 **Returns:**  
   
-* (_Object_ | _Undefined_) Returns an item of `{ key: 'sampleId', value: 1234 }`, otherwise returns `undefined` if not found.
+* (_Object_ | _Undefined_): Returns an item of `{ key: 'sampleId', value: 1234 }`, otherwise returns `undefined` if not found.
 
 **Example**
 
@@ -160,21 +157,20 @@ ut.getRid('appType');                     // { key: 'appType', value: 5750 }
 ut.getRid(5750);                          // { key: 'appType', value: 5700 }
 ut.getRid('5750');                        // { key: 'appType', value: 5750 }
 ```
+  
 ********************************************
-<br />
-
 <a name="API_ridKey"></a>
 ### .ridKey([oid ,] rid)
 > Returns the string of an Resource identifier.
 
 **Arguments**
 
-- oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
-- rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+1. oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+2. rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
 
 **Returns:**  
   
-* (_String_) Returns the Resource id in string, otherwise returns the argument `'rid'` ifself if not found.
+* (_String_): Returns the Resource id in string, otherwise returns the argument `'rid'` ifself if not found.
 
 **Example**
 
@@ -195,21 +191,20 @@ ut.ridKey('5750');                        // 'appType'
 ut.ridKey('no_such_rid');                  // 'no_such_rid'
 ut.ridKey(3303, 'no_such_id');             // 'no_such_id'
 ```
+  
 ********************************************
-<br />
-
 <a name="API_ridNum"></a>
 ### .ridNum([oid ,] rid)
 > Returns the number of an Resource identifier.
 
 **Arguments**
 
-- oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
-- rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+1. oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+2. rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
 
 **Returns:**  
   
-* (_Number_) Returns the Resource id in number, otherwise returns the argument `'rid'` ifself if not found.
+* (_Number_): Returns the Resource id in number, otherwise returns the argument `'rid'` ifself if not found.
 
 **Example**
 
@@ -232,20 +227,19 @@ ut.ridNum('99999');                        // 99999 (no such rid)
 ut.ridNum(99999);                          // 99999 (no such rid)
 ut.ridNum(3303, 7654);                     // 7654  (no such rid)
 ```
+  
 ********************************************
-<br />
-
 <a name="API_getRspCode"></a>
 ### .getRspCode(code)
 > Returns an item of the Response code.
 
 **Arguments**
 
-* code (*_String_ | _Number_*): `code` can be given with a string or a number.  
+1. code (*_String_ | _Number_*): `code` can be given with a string or a number.  
 
 **Returns:**  
   
-* (_Object_ | _Undefined_) Returns an item in the form of `{ key: 'Created', value: 201 }`, otherwise returns `undefined` if not found.
+* (_Object_ | _Undefined_): Returns an item in the form of `{ key: 'Created', value: 201 }`, otherwise returns `undefined` if not found.
 
 **Example**
 
@@ -254,20 +248,19 @@ ut.getRspCode('BadRequest');  // { key: 'BadRequest', value: 400 }
 ut.getRspCode(400);           // { key: 'BadRequest', value: 400 }
 ut.getRspCode(302);           // undefined 
 ```
+  
 ********************************************
-<br />
-
 <a name="API_rspCodeKey"></a>
 ### .rspCodeKey(code)
 > Returns the string of an Response code.
 
 **Arguments**
 
-* code (*_String_ | _Number_*): `code` can be given with a string or a number.  
+1. code (*_String_ | _Number_*): `code` can be given with a string or a number.  
 
 **Returns:**  
   
-* (_String_ | _Undefined_) Returns the string of an Response code, otherwise returns `undefined` if not found.
+* (_String_ | _Undefined_): Returns the string of an Response code, otherwise returns `undefined` if not found.
 
 **Example**
 
@@ -276,20 +269,19 @@ ut.rspCodeKey('BadRequest');  // 'BadRequest'
 ut.rspCodeKey(400);           // 'BadRequest'
 ut.rspCodeKey(302);           // undefined 
 ```
+  
 ********************************************
-<br />
-
 <a name="API_rspCodeNum"></a>
 ### .rspCodeNum(code)
 > Returns the number of an Response code.
 
 **Arguments**
 
-* code (*_String_ | _Number_*): `code` can be given with a string or a number.  
+1. code (*_String_ | _Number_*): `code` can be given with a string or a number.  
 
 **Returns:**  
   
-* (_Number_ | _Undefined_) Returns the number of an Response code, otherwise returns `undefined` if not found.
+* (_Number_ | _Undefined_): Returns the number of an Response code, otherwise returns `undefined` if not found.
 
 **Example**
 
@@ -298,20 +290,19 @@ ut.rspCodeKey('BadRequest');  // 400
 ut.rspCodeKey(400);           // 400
 ut.rspCodeKey(302);           // undefined 
 ```
+  
 ********************************************
-<br />
-
 <a name="API_getCmd"></a>
 ### .getCmd(cmd)
 > Returns an item of the command idetifier.
 
 **Arguments**
 
-* code (*_String_ | _Number_*): `cmd` can be given with a string or a number.  
+1. code (*_String_ | _Number_*): `cmd` can be given with a string or a number.  
 
 **Returns:**  
   
-* (_Object_ | _Undefined_) Returns an item in the form of `{ key: 'discover', value: 2 }`, otherwise returns `undefined` if not found.
+* (_Object_ | _Undefined_): Returns an item in the form of `{ key: 'discover', value: 2 }`, otherwise returns `undefined` if not found.
 
 **Example**
 
@@ -332,20 +323,19 @@ ut.getCmd(4);   // { key: 'execute', value: 4 }
 ut.getCmd(5);   // { key: 'observe', value: 5 }
 ut.getCmd(6);   // { key: 'execute', value: 6 }
 ```
+  
 ********************************************
-<br />
-
 <a name="API_cmdKey"></a>
 ### .cmdKey(cmd)
 > Returns the string of an command identifier.
 
 **Arguments**
 
-* code (*_String_ | _Number_*): `cmd` can be given with a string or a number.  
+1. code (*_String_ | _Number_*): `cmd` can be given with a string or a number.  
 
 **Returns:**  
   
-* (_String_ | _Undefined_) Returns the string of an command id, otherwise returns `undefined` if unrecognized.
+* (_String_ | _Undefined_): Returns the string of an command id, otherwise returns `undefined` if unrecognized.
 
 **Example**
 
@@ -355,20 +345,19 @@ ut.cmdKey(4);             // 'execute'
 ut.cmdKey('no_such_cmd'); // undefined 
 ut.cmdKey(22);            // undefined 
 ```
+  
 ********************************************
-<br />
-
 <a name="API_cmdNum"></a>
 ### .cmdNum(cmd)
 > Returns the number of an command identifier.
 
 **Arguments**
 
-* code (*_String_ | _Number_*): `cmd` can be given with a string or a number.  
+1. code (*_String_ | _Number_*): `cmd` can be given with a string or a number.  
 
 **Returns:**  
   
-* (_Number_ | _Undefined_) Returns the number of an command id, otherwise returns `undefined` if unrecognized.
+* (_Number_ | _Undefined_): Returns the number of an command id, otherwise returns `undefined` if unrecognized.
 
 **Example**
 
@@ -378,21 +367,20 @@ ut.cmdKey(4);             // 4
 ut.cmdKey('no_such_cmd'); // undefined 
 ut.cmdKey(22);            // undefined 
 ```
+  
 ********************************************
-<br />
-
 <a name="API_createPath"></a>
 ### .createPath(cnnt, ...)
 > Returns a path string in conjunction of the given connector.
 
 **Arguments**
 
-* cnt (*_String_|_Number_*): The connector, can be `'.'` or `'/'`  
-* ... (*_String_, variadic*): Words to be connected  
+1. cnt (*_String_|_Number_*): The connector, can be `'.'` or `'/'`  
+2. ... (*_String_, variadic*): Words to be connected  
 
 **Returns:**  
   
-* (_String_) Returns the combined result.
+* (_String_): Returns the combined result.
 
 **Example**
 
@@ -400,20 +388,19 @@ ut.cmdKey(22);            // undefined
 ut.createPath('.', 'dev', 0, 'sensor');          // 'dev.0.sensor'
 ut.createPath('/', 'dev', 0, 'sensor', 'value'); // 'dev/0/sensor/value'
 ```
+  
 ********************************************
-<br />
-
 <a name="API_slashPath"></a>
 ### .slashPath(path)
 > Returns a path with '/' separator.
 
 **Arguments**
 
-* path (*_String_*): The path string  
+1. path (*_String_*): The path string  
 
 **Returns:**  
   
-* (_String_) Returns the result. The first and last character will be ignored if they are `'.'` or `'/'`.  
+* (_String_): Returns the result. The first and last character will be ignored if they are `'.'` or `'/'`.  
 
 **Example**
 
@@ -423,20 +410,19 @@ ut.slashPath('.dev.0.sensor.value');    // 'dev/0/sensor/value'
 ut.slashPath('/dev.0.sensor/value/');   // 'dev/0/sensor/value'
 ut.slashPath('/dev/0/sensor/value/');   // 'dev/0/sensor/value'
 ```
+  
 ********************************************
-<br />
-
 <a name="API_dotPath"></a>
 ### .dotPath(path)
 > Returns a path with '.' separator.
 
 **Arguments**
 
-* path (*_String_*): The path string  
+1. path (*_String_*): The path string  
 
 **Returns:**  
   
-* (_String_) Returns the result. The first and last character will be ignored if they are `'.'` or `'/'`.  
+* (_String_): Returns the result. The first and last character will be ignored if they are `'.'` or `'/'`.  
 
 **Example**
 
@@ -446,20 +432,19 @@ ut.dotPath('.dev.0.sensor.value');    // 'dev.0.sensor.value'
 ut.dotPath('/dev.0.sensor/value/');   // 'dev.0.sensor.value'
 ut.dotPath('/dev/0/sensor/value/');   // 'dev.0.sensor.value'
 ```
+  
 ********************************************
-<br />
-
 <a name="API_pathItems"></a>
 ### .pathItems(path)
 > Returns an array of words that are separated by `'.'` or `'/'`.
 
 **Arguments**
 
-* path (*_String_*): The path string  
+1. path (*_String_*): The path string  
 
 **Returns:**  
   
-* (_Array_) Returns the words in an array.  
+* (_Array_): Returns the words in an array.  
 
 **Example**
 
@@ -469,21 +454,20 @@ ut.pathItems('.dev.0.sensor.value');    // [ 'dev', '0', 'sensor', 'value' ]
 ut.pathItems('/dev.0.sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
 ut.pathItems('/dev/0/sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
 ```
+  
 ********************************************
-<br />
-
 <a name="API_buildPathValuePairs"></a>
 ### .buildPathValuePairs(rootPath, obj)
 > Returns an object in path-value pair.  
 
 **Arguments**
 
-* rootPath (*_String_*): The path where the `obj` attachs to  
-* obj (*_Object_*): The object to be built from  
+1. rootPath (*_String_*): The path where the `obj` attachs to  
+2. obj (*_Object_*): The object to be built from  
 
 **Returns:**  
   
-* (_Object_) Returns a new object that is orginized in path-vale pair.  
+* (_Object_): Returns a new object that is orginized in path-vale pair.  
 
 **Example**
 
@@ -518,21 +502,20 @@ var newObj = ut.buildPathValuePairs('/dev/0', myObj);
 //     'dev.0.c': 3
 // }
 ```
+  
 ********************************************
-<br />
-
-<a name="API_isGoodResponse()"></a>
+<a name="API_isGoodResponse"></a>
 ### .isGoodResponse(status)
 > Check if a status code is a good response. The good responses are those with status codes in either one of
 > 200, 201, 202, 204, and 205.
 
 **Arguments**
 
-* status (*_String_ | _Number_*): `status` can be given with a string or a number.  
+1. status (*_String_ | _Number_*): `status` can be given with a string or a number.  
 
 **Returns:**  
   
-* (_Boolean_) Returns true if status is a good response, otherwise returns false.  
+* (_Boolean_): Returns true if status is a good response, otherwise returns false.  
 
 **Example**
 
@@ -542,21 +525,20 @@ ut.isGoodResponse('Deleted');   // true
 ut.isGoodResponse('NotFound');  // false
 ut.isGoodResponse(409);         // false
 ```
+  
 ********************************************
-<br />
-
-<a name="API_getAccessCtrl(oid, rid)"></a>
+<a name="API_getAccessCtrl"></a>
 ### .getAccessCtrl()
 > Get the access control flag of an Resource. Please refer to [lwm2m-id documentation](https://github.com/simenkid/lwm2m-id#getrdefoid-rid).
 
 **Arguments**
 
-- oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
-- rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+1. oid (*_String_ | _Number_*, optional): `oid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
+2. rid (*_String_ | _Number_*): `rid` can be given with a string or a number. Notice that a numbered string will be recognized as a number, e.g. '128' is equal to 128.
 
 **Returns:**  
   
-* (_String_ | _Null_ | _Undefined_) Returns the access control flag which can be 'R' (read-only), 'W' (write-only), 'RW', 'E' (executable), and null (cannot access). Returns undfined if the Resource is not found.  
+* (_String_ | _Null_ | _Undefined_): Returns the access control flag which can be 'R' (read-only), 'W' (write-only), 'RW', 'E' (executable), and null (cannot access). Returns undfined if the Resource is not found.  
 
 **Example**
 
@@ -565,20 +547,19 @@ ut.getAccessCtrl('temperature', 'sensorValue'); // 'R'
 ut.getAccessCtrl('lightCtrl', 5850);            // 'RW'
 ut.getAccessCtrl('xxxx', 1234);                 // undfined
 ```
+  
 ********************************************
-<br />
-
-<a name="API_jsonify()"></a>
+<a name="API_jsonify"></a>
 ### .jsonify(str)
 > Jsonify a string into a Javascript object.  
 
 **Arguments**
 
-- str (*_String_*): The string to be jsonified.  
+1. str (*_String_*): The string to be jsonified.  
 
 **Returns:**  
   
-* (_Object_ | _String_) Returns an object if the string can be jsonified, otherwise returns the string itself.  
+* (_Object_ | _String_): Returns an object if the string can be jsonified, otherwise returns the string itself.  
 
 **Example**
 
@@ -586,5 +567,3 @@ ut.getAccessCtrl('xxxx', 1234);                 // undfined
 ut.jsonify('{"x": 3, "y": 'hi'}');  // { x: 3, y: 'hi' }
 ut.jsonify('hello there');          // 'hello there'
 ```
-********************************************
-<br />
