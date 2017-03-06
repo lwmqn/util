@@ -10,6 +10,7 @@ lwm2mid.Cmd = new lwm2mid._Enum({
     "observe": 5,
     "notify": 6,
     "ping": 7,
+    "identify": 8,
     "unknown": 255
 });
 
