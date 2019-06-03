@@ -9,6 +9,7 @@ Utility for LWMQN mqtt-shepherd server and mqtt-node client libraries.
 [![Travis branch](https://img.shields.io/travis/lwmqn/lwmqn-util/master.svg?maxAge=2592000)](https://travis-ci.org/lwmqn/lwmqn-util)
 [![Coverage Status](https://coveralls.io/repos/github/lwmqn/lwmqn-util/badge.svg?branch=master)](https://coveralls.io/github/lwmqn/lwmqn-util?branch=master)
 [![npm](https://img.shields.io/npm/l/lwmqn-util.svg?maxAge=2592000)](https://www.npmjs.com/package/lwmqn-util)
+[![Greenkeeper badge](https://badges.greenkeeper.io/lwmqn/lwmqn-util.svg)](https://greenkeeper.io/)
 
 -------
 
