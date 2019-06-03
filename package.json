@@ -4,7 +4,8 @@
   "description": "Utility for LWMQN mqtt-shepherd server and mqtt-node client libraries",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -u bdd --reporter spec"
+    "test": "nyc mocha -u bdd --reporter spec",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,8 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "coveralls": "^3.0.3",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
   }
 }
