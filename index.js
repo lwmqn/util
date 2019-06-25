@@ -52,8 +52,15 @@ ut.oidKey = function (oid) {
 ut.oidNum = function (oid) {
   let oidItem = lwm2mid.getOid(oid)
 
-  oidItem = oidItem ? oidItem.value : parseInt(oid) // if undefined, return parseInt(itself)
-  return isNaN(oidItem) ? oid : oidItem
+  if (oidItem) {
+    return oidItem.value
+  } else {
+    if (oid.toString().match(/^[0-9]+$/)) {
+      var oidNumber = parseInt(oid)
+      if (!isNaN(oidNumber)) oid = oidNumber
+    }
+    return oid
+  }
 }
 
 ut.getRid = function (oid, rid) {
@@ -79,8 +86,15 @@ ut.ridNum = function (oid, rid) {
 
   if (typeof rid === 'undefined') rid = oid
 
-  ridItem = ridItem ? ridItem.value : parseInt(rid) // if undefined, return parseInt(itself)
-  return isNaN(ridItem) ? rid : ridItem
+  if (ridItem) {
+    return ridItem.value
+  } else {
+    if (rid.toString().match(/^[0-9]+$/)) {
+      var ridNumber = parseInt(rid)
+      if (!isNaN(ridNumber)) rid = ridNumber
+    }
+    return rid
+  }
 }
 
 ut.getRspCode = function (code) {
