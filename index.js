@@ -50,7 +50,7 @@ ut.oidKey = function (oid) {
 }
 
 ut.oidNum = function (oid) {
-  let oidItem = lwm2mid.getOid(oid)
+  const oidItem = lwm2mid.getOid(oid)
 
   if (oidItem) {
     return oidItem.value
@@ -82,7 +82,7 @@ ut.ridKey = function (oid, rid) {
 }
 
 ut.ridNum = function (oid, rid) {
-  let ridItem = lwm2mid.getRid(oid, rid)
+  const ridItem = lwm2mid.getRid(oid, rid)
 
   if (typeof rid === 'undefined') rid = oid
 
@@ -171,7 +171,7 @@ ut.buildPathValuePairs = function (rootPath, obj) {
     if (rootPath !== undefined && rootPath !== '' && rootPath !== '.' && rootPath !== '/') rootPath = `${rootPath}.`
 
     for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
         const n = obj[key]
         // Tricky: objList is an array, don't buid its full path, or updating new list will fail
         if (n && typeof n === 'object' && key !== 'objList') result = Object.assign(result, ut.buildPathValuePairs(rootPath + key, n))
