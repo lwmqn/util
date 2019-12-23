@@ -7,7 +7,6 @@
 [![NPM version](https://img.shields.io/npm/v/@lwmqn/util.svg?style=flat-square)](https://www.npmjs.com/package/@lwmqn/util)
 [![NPM downloads](https://img.shields.io/npm/dm/@lwmqn/util.svg?style=flat-square)](https://www.npmjs.com/package/@lwmqn/util)
 [![Travis branch](https://img.shields.io/travis/lwmqn/util/master.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/lwmqn/util)
-[![Coverage Status](https://coveralls.io/repos/github/lwmqn/util/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/lwmqn/util?branch=master)
 [![Gitter](https://img.shields.io/gitter/room/lwmqn/Lobby.svg?style=flat-square)](https://gitter.im/lwmqn/Lobby)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
 ![pr-welcoming-image](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
