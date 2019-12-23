@@ -1,7 +1,7 @@
 {
-  "name": "lwmqn-util",
+  "name": "@lwmqn/util",
   "version": "0.5.3",
-  "description": "Utility for LWMQN mqtt-shepherd server and mqtt-node client libraries",
+  "description": "Utility for LwMQN shepherd server and qnode client libraries.",
   "main": "index.js",
   "scripts": {
     "lint": "standard --env mocha | snazzy",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lwmqn/lwmqn-util.git"
+    "url": "https://github.com/lwmqn/util.git"
   },
   "keywords": [
     "lwmqn",
@@ -22,9 +22,9 @@
   "author": "Simen Li",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lwmqn/lwmqn-util/issues"
+    "url": "https://github.com/lwmqn/util/issues"
   },
-  "homepage": "https://github.com/lwmqn/lwmqn-util",
+  "homepage": "https://github.com/lwmqn/util",
   "dependencies": {
     "lwm2m-id": "^1.6.2"
   },
