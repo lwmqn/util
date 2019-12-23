@@ -1,6 +1,6 @@
 {
   "name": "@lwmqn/util",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Utility for LwMQN shepherd server and qnode client libraries.",
   "main": "index.js",
   "scripts": {
