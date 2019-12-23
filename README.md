@@ -1,8 +1,8 @@
-![LWMQN Network](https://raw.githubusercontent.com/lwmqn/documents/master/media/lwmqn_net.png)
+![LwMQN Network](https://raw.githubusercontent.com/lwmqn/documents/master/media/lwmqn_net.png)
 
 <div align="center">
 
-**lwmqn-util** is an utility for LWMQN mqtt-shepherd server and mqtt-node client libraries.
+**lwmqn-util** is an utility for LwMQN lwmqn-shepherd server and lwmqn-node client libraries.
   
 [![Greenkeeper badge](https://badges.greenkeeper.io/lwmqn/lwmqn-util.svg?style=flat-square)](https://greenkeeper.io/)
 [![NPM version](https://img.shields.io/npm/v/lwmqn-util.svg?style=flat-square)](https://www.npmjs.com/package/lwmqn-util)
@@ -19,16 +19,16 @@
 
 ## What is LWMQN
 
-Lightweight MQTT machine network ([**LWMQN**](http://lwmqn.github.io)) is an open source project that follows part of [**OMA LWM2M v1.0**](http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0) specification to meet the minimum requirements of machine network management.  
+Lightweight Message Queuing Network ([**LwMQN**](http://lwmqn.github.io)) is an open source project that follows part of [**OMA LwM2M v1.0**](http://technical.openmobilealliance.org/Technical/technical-information/release-program/current-releases/oma-lightweightm2m-v1-0) specification to meet the minimum requirements of machine network management.  
 
 ### Server-side and Client-side Libraries:
-   - LWMQN project provides you with this machine-side **mqtt-node** library and a server-side [**mqtt-shepherd**](https://github.com/lwmqn/mqtt-shepherd) library to build your machine network with JavaScript and node.js easily. 
+   - LwMQN project provides you with this machine-side **lwmqn-node** library and a server-side [**lwmqn-shepherd**](https://github.com/lwmqn/lwmqn-shepherd) library to build your machine network with JavaScript and node.js easily. 
 
-* Server-side library: [**mqtt-shepherd**](https://github.com/lwmqn/mqtt-shepherd)
-* Client-side library: [**mqtt-node**](https://github.com/lwmqn/mqtt-node)
+* Server-side library: [**lwmqn-shepherd**](https://github.com/lwmqn/lwmqn-shepherd)
+* Client-side library: [**lwmqn-node**](https://github.com/lwmqn/lwmqn-node)
 * [**A simple demo webapp**](https://github.com/lwmqn/lwmqn-demo)
 
-**lwmqn-util** is a utility for Lightweight Mqtt Machine Network Server([mqtt-shepherd](https://github.com/lwmqn/mqtt-shepherd)) and Client([mqtt-node](https://github.com/lwmqn/mqtt-node))  modules. This utility provides some common methods of getting identifiers in string or in number, getting command ids, getting response codes, and tackling the path of resource alloaction.
+**lwmqn-util** is a utility for Lightweight Message Queuing Network ([lwmqn-shepherd](https://github.com/lwmqn/lwmqn-shepherd)) and Client([lwmqn-node](https://github.com/lwmqn/lwmqn-node))  modules. This utility provides some common methods of getting identifiers in string or in number, getting command ids, getting response codes, and tackling the path of resource alloaction.
 
 -------
 
