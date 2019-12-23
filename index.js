@@ -56,7 +56,7 @@ ut.oidNum = function (oid) {
     return oidItem.value
   } else {
     if (oid.toString().match(/^[0-9]+$/)) {
-      var oidNumber = parseInt(oid)
+      const oidNumber = parseInt(oid)
       if (!isNaN(oidNumber)) oid = oidNumber
     }
     return oid
@@ -90,7 +90,7 @@ ut.ridNum = function (oid, rid) {
     return ridItem.value
   } else {
     if (rid.toString().match(/^[0-9]+$/)) {
-      var ridNumber = parseInt(rid)
+      const ridNumber = parseInt(rid)
       if (!isNaN(ridNumber)) rid = ridNumber
     }
     return rid

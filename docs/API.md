@@ -38,7 +38,7 @@
 **Example**
 
 ```js
-var ut = require('lwmqn-util');
+const ut = require('lwmqn-util');
 
 ut.getOid('temperature');  // { key: 'temperature', value: 3303 }
 ut.getOid(3303);           // { key: 'temperature', value: 3303 }
@@ -461,7 +461,7 @@ ut.pathItems('/dev/0/sensor/value/');   // [ 'dev', '0', 'sensor', 'value' ]
 **Example**
 
 ```js
-var myObj = {
+const myObj = {
     a: {
         a1: {
             a11: 1,
@@ -473,7 +473,7 @@ var myObj = {
     c: 3
 };
 
-var newObj = ut.buildPathValuePairs('/', myObj);
+const newObj = ut.buildPathValuePairs('/', myObj);
 // newObj = {
 //     'a.a1.a11': 1,
 //     'a.a1.a12': 'hi',
@@ -482,7 +482,7 @@ var newObj = ut.buildPathValuePairs('/', myObj);
 //     'c': 3
 // }
 
-var newObj = ut.buildPathValuePairs('/dev/0', myObj);
+const newObj = ut.buildPathValuePairs('/dev/0', myObj);
 // newObj = {
 //     'dev.0.a.a1.a11': 1,
 //     'dev.0.a.a1.a12': 'hi',
